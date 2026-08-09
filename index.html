@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,16 +7,27 @@
 <title>Vansh Raj Yadav | Data Analyst</title>
 
 <meta name="description"
-content="Vansh Raj Yadav — Data Analyst portfolio. SQL, Python, Java, Power BI, Excel, data cleaning, visualization and exploratory data analysis.">
+content="Vansh Raj Yadav — Aspiring Data Analyst portfolio. SQL, Python, Java, Power BI, Excel, data cleaning, visualization and exploratory data analysis.">
 
 <style>
+
+/* =========================================================
+   FONTS
+   ========================================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
 
 :root{
     --bg:#05070d;
     --bg2:#080c15;
     --panel:rgba(14,19,32,.72);
     --panel2:#101727;
+
     --text:#f4f7ff;
     --muted:#8b95aa;
     --muted2:#5e687c;
@@ -32,10 +42,16 @@ content="Vansh Raj Yadav — Data Analyst portfolio. SQL, Python, Java, Power BI
     --line2:rgba(255,255,255,.045);
 
     --shadow:0 30px 80px rgba(0,0,0,.4);
+
     --radius:22px;
 
     --max:1200px;
 }
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 *{
     margin:0;
@@ -52,6 +68,7 @@ body{
         radial-gradient(circle at 15% 10%,rgba(53,245,208,.07),transparent 30%),
         radial-gradient(circle at 85% 20%,rgba(155,124,255,.08),transparent 30%),
         var(--bg);
+
     color:var(--text);
     font-family:'DM Sans',sans-serif;
     overflow-x:hidden;
@@ -64,11 +81,18 @@ body::before{
     pointer-events:none;
     z-index:999;
     opacity:.035;
+
     background-image:
         linear-gradient(rgba(255,255,255,.3) 1px,transparent 1px),
         linear-gradient(90deg,rgba(255,255,255,.3) 1px,transparent 1px);
+
     background-size:80px 80px;
-    mask-image:linear-gradient(to bottom,black,transparent 90%);
+
+    mask-image:linear-gradient(
+        to bottom,
+        black,
+        transparent 90%
+    );
 }
 
 a{
@@ -90,48 +114,68 @@ button{
     margin:auto;
 }
 
-/* ================= CURSOR GLOW ================= */
+
+/* =========================================================
+   CURSOR GLOW
+   ========================================================= */
 
 .cursor-glow{
     position:fixed;
     width:400px;
     height:400px;
     border-radius:50%;
-    background:radial-gradient(circle,rgba(53,245,208,.08),transparent 65%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(53,245,208,.08),
+            transparent 65%
+        );
+
     pointer-events:none;
     transform:translate(-50%,-50%);
     z-index:0;
 }
 
-/* ================= NAV ================= */
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 .nav{
     position:fixed;
     top:18px;
     left:50%;
     transform:translateX(-50%);
+
     width:min(1120px,calc(100% - 30px));
+
     z-index:100;
 }
 
 .nav-inner{
     height:64px;
     padding:0 18px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
 
     background:rgba(7,10,17,.72);
     backdrop-filter:blur(22px);
+
     border:1px solid var(--line);
     border-radius:18px;
-    box-shadow:0 15px 50px rgba(0,0,0,.3);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.3);
 }
 
 .logo{
     display:flex;
     align-items:center;
     gap:10px;
+
     font-family:'Space Grotesk';
     font-weight:700;
 }
@@ -139,15 +183,24 @@ button{
 .logo-mark{
     width:32px;
     height:32px;
+
     border-radius:9px;
+
     display:grid;
     place-items:center;
 
     background:
-        linear-gradient(135deg,var(--cyan),var(--blue));
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--blue)
+        );
+
     color:#04110f;
     font-size:14px;
-    box-shadow:0 0 25px rgba(53,245,208,.2);
+
+    box-shadow:
+        0 0 25px rgba(53,245,208,.2);
 }
 
 .nav-links{
@@ -157,10 +210,14 @@ button{
 
 .nav-links a{
     padding:9px 13px;
+
     color:var(--muted);
+
     font-family:'JetBrains Mono';
     font-size:11px;
+
     border-radius:9px;
+
     transition:.25s;
 }
 
@@ -173,302 +230,433 @@ button{
     display:flex;
     align-items:center;
     gap:7px;
+
     font-family:'JetBrains Mono';
     font-size:10px;
+
     color:var(--cyan);
 }
 
 .status-dot{
     width:7px;
     height:7px;
+
     border-radius:50%;
+
     background:var(--cyan);
-    box-shadow:0 0 14px var(--cyan);
+
+    box-shadow:
+        0 0 14px var(--cyan);
+
     animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
+
     50%{
         opacity:.35;
         transform:scale(.65);
     }
+
 }
 
-@media(max-width:800px){
-    .nav-links{
-        display:none;
-    }
-}
 
-/* ================= HERO ================= */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero{
     min-height:100vh;
+
     position:relative;
+
     display:flex;
     align-items:center;
-    padding:130px 0 80px;
-    overflow:hidden;
-}
 
-#particles{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    opacity:.55;
+    padding:130px 0 80px;
+
+    overflow:hidden;
 }
 
 .hero::after{
     content:"";
+
     position:absolute;
+
     left:50%;
     bottom:-250px;
+
     transform:translateX(-50%);
+
     width:800px;
     height:500px;
-    background:radial-gradient(circle,rgba(53,245,208,.08),transparent 65%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(53,245,208,.08),
+            transparent 65%
+        );
+
     pointer-events:none;
 }
 
 .hero-grid{
     position:relative;
     z-index:2;
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:70px;
-    align-items:center;
-}
 
-@media(max-width:900px){
-    .hero-grid{
-        grid-template-columns:1fr;
-        gap:50px;
-    }
+    display:grid;
+
+    grid-template-columns:
+        1.15fr .85fr;
+
+    gap:70px;
+
+    align-items:center;
 }
 
 .eyebrow{
     display:inline-flex;
+
     align-items:center;
     gap:9px;
+
     padding:7px 11px;
-    border:1px solid rgba(53,245,208,.18);
-    background:rgba(53,245,208,.045);
+
+    border:
+        1px solid
+        rgba(53,245,208,.18);
+
+    background:
+        rgba(53,245,208,.045);
+
     border-radius:100px;
+
     color:var(--cyan);
+
     font-family:'JetBrains Mono';
     font-size:10px;
+
     letter-spacing:.08em;
     text-transform:uppercase;
+
     margin-bottom:25px;
 }
 
 .hero h1{
     font-family:'Space Grotesk';
-    font-size:clamp(48px,7vw,88px);
+
+    font-size:
+        clamp(48px,7vw,88px);
+
     line-height:.98;
+
     letter-spacing:-.06em;
+
     max-width:850px;
 }
 
 .hero h1 .outline{
     color:transparent;
-    -webkit-text-stroke:1px rgba(255,255,255,.35);
+
+    -webkit-text-stroke:
+        1px rgba(255,255,255,.35);
 }
 
 .hero h1 .gradient{
-    background:linear-gradient(
-        100deg,
-        var(--cyan),
-        var(--blue) 45%,
-        var(--purple)
-    );
+    background:
+        linear-gradient(
+            100deg,
+            var(--cyan),
+            var(--blue) 45%,
+            var(--purple)
+        );
+
     -webkit-background-clip:text;
+
     color:transparent;
 }
 
 .hero-description{
     max-width:620px;
+
     margin-top:27px;
+
     color:var(--muted);
+
     font-size:16px;
+
     line-height:1.8;
 }
 
 .hero-buttons{
     display:flex;
+
     gap:12px;
+
     margin-top:32px;
+
     flex-wrap:wrap;
 }
 
 .btn{
     display:inline-flex;
+
     align-items:center;
+    justify-content:center;
+
     gap:10px;
+
     padding:13px 19px;
+
     border-radius:11px;
+
     font-family:'JetBrains Mono';
     font-size:11px;
+
     transition:.25s;
 }
 
 .btn-primary{
     color:#03100d;
+
     background:var(--cyan);
-    box-shadow:0 10px 35px rgba(53,245,208,.15);
+
+    box-shadow:
+        0 10px 35px
+        rgba(53,245,208,.15);
 }
 
 .btn-primary:hover{
     transform:translateY(-3px);
-    box-shadow:0 18px 40px rgba(53,245,208,.25);
+
+    box-shadow:
+        0 18px 40px
+        rgba(53,245,208,.25);
 }
 
 .btn-secondary{
     border:1px solid var(--line);
-    background:rgba(255,255,255,.025);
+
+    background:
+        rgba(255,255,255,.025);
 }
 
 .btn-secondary:hover{
-    border-color:rgba(255,255,255,.2);
-    background:rgba(255,255,255,.05);
+    border-color:
+        rgba(255,255,255,.2);
+
+    background:
+        rgba(255,255,255,.05);
+
     transform:translateY(-3px);
 }
 
-/* ================= HERO DASHBOARD ================= */
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
 
 .dashboard{
     position:relative;
+
     min-height:450px;
 }
 
 .dashboard-card{
     position:absolute;
+
     border:1px solid var(--line);
-    background:rgba(11,16,28,.82);
+
+    background:
+        rgba(11,16,28,.82);
+
     backdrop-filter:blur(20px);
+
     border-radius:20px;
+
     box-shadow:var(--shadow);
 }
 
 .main-dashboard{
     inset:30px 0 20px 0;
+
     padding:22px;
+
     transform:rotate(1.5deg);
 }
 
 .dash-top{
     display:flex;
+
     justify-content:space-between;
     align-items:center;
+
     margin-bottom:25px;
 }
 
 .dash-title{
     font-family:'JetBrains Mono';
+
     font-size:10px;
+
     color:var(--muted);
 }
 
 .dash-live{
     font-family:'JetBrains Mono';
+
     font-size:9px;
+
     color:var(--cyan);
 }
 
 .big-number{
     font-family:'Space Grotesk';
+
     font-size:42px;
+
     font-weight:700;
+
     letter-spacing:-.05em;
 }
 
 .big-number span{
     color:var(--cyan);
+
     font-size:18px;
 }
 
 .dash-label{
     color:var(--muted);
+
     font-size:11px;
 }
 
 .chart{
     margin-top:28px;
+
     height:180px;
+
     position:relative;
+
     overflow:hidden;
 }
 
 .chart-grid{
     position:absolute;
     inset:0;
+
     background:
-        linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+        linear-gradient(
+            rgba(255,255,255,.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.045) 1px,
+            transparent 1px
+        );
+
     background-size:50px 45px;
 }
 
 .chart svg{
     width:100%;
     height:100%;
+
     position:relative;
+
     z-index:2;
 }
 
 .chart-line{
     fill:none;
+
     stroke:var(--cyan);
+
     stroke-width:3;
+
     stroke-linecap:round;
     stroke-linejoin:round;
-    filter:drop-shadow(0 0 7px rgba(53,245,208,.4));
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(53,245,208,.4)
+        );
+
     stroke-dasharray:1000;
     stroke-dashoffset:1000;
-    animation:drawChart 2.5s ease forwards;
+
+    animation:
+        drawChart 2.5s ease forwards;
 }
 
 .chart-area{
     fill:url(#areaGradient);
+
     opacity:.18;
 }
 
 @keyframes drawChart{
+
     to{
         stroke-dashoffset:0;
     }
+
 }
 
 .dash-stats{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:9px;
+
     margin-top:16px;
 }
 
 .mini-stat{
     padding:10px;
-    background:rgba(255,255,255,.025);
-    border:1px solid var(--line2);
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid
+        var(--line2);
+
     border-radius:10px;
 }
 
 .mini-stat b{
     display:block;
+
     font-family:'Space Grotesk';
+
     font-size:15px;
 }
 
 .mini-stat small{
     color:var(--muted2);
+
     font-family:'JetBrains Mono';
+
     font-size:8px;
 }
 
+
+/* FLOATING CARDS */
+
 .float-card{
     padding:15px;
+
     min-width:155px;
-    animation:float 5s ease-in-out infinite;
+
+    animation:
+        float 5s ease-in-out infinite;
 }
 
 .float-card.one{
@@ -479,64 +667,96 @@ button{
 .float-card.two{
     bottom:-5px;
     left:-45px;
+
     animation-delay:-2s;
 }
 
 @keyframes float{
+
     0%,100%{
         transform:translateY(0);
     }
+
     50%{
         transform:translateY(-12px);
     }
+
 }
 
 .float-head{
     display:flex;
+
     justify-content:space-between;
+
     color:var(--muted);
+
     font-family:'JetBrains Mono';
+
     font-size:9px;
 }
 
 .float-value{
     margin-top:10px;
+
     font-family:'Space Grotesk';
+
     font-size:22px;
+
     font-weight:700;
 }
 
 .up{
     color:var(--cyan);
+
     font-size:10px;
 }
 
 .bars{
     height:50px;
+
     display:flex;
+
     align-items:end;
+
     gap:5px;
+
     margin-top:8px;
 }
 
 .bar{
     flex:1;
-    border-radius:3px 3px 0 0;
-    background:linear-gradient(var(--purple),rgba(155,124,255,.1));
+
+    border-radius:
+        3px 3px 0 0;
+
+    background:
+        linear-gradient(
+            var(--purple),
+            rgba(155,124,255,.1)
+        );
 }
 
-/* ================= KPI ================= */
+
+/* =========================================================
+   KPI
+   ========================================================= */
 
 .kpis{
     margin-top:70px;
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     border-top:1px solid var(--line);
+
     border-bottom:1px solid var(--line);
 }
 
 .kpi{
     padding:22px 18px;
+
     border-right:1px solid var(--line);
 }
 
@@ -546,7 +766,9 @@ button{
 
 .kpi-number{
     font-family:'Space Grotesk';
+
     font-size:28px;
+
     font-weight:700;
 }
 
@@ -556,72 +778,78 @@ button{
 
 .kpi-label{
     color:var(--muted);
+
     font-family:'JetBrains Mono';
+
     font-size:9px;
+
     margin-top:5px;
 }
 
-@media(max-width:650px){
-    .kpis{
-        grid-template-columns:repeat(2,1fr);
-    }
 
-    .kpi:nth-child(2){
-        border-right:0;
-    }
-
-    .kpi{
-        border-bottom:1px solid var(--line);
-    }
-}
-
-/* ================= SECTIONS ================= */
+/* =========================================================
+   SECTIONS
+   ========================================================= */
 
 section{
     padding:120px 0;
+
     position:relative;
 }
 
 .section-number{
     font-family:'JetBrains Mono';
+
     color:var(--cyan);
+
     font-size:10px;
+
     letter-spacing:.1em;
+
     margin-bottom:12px;
 }
 
 .section-title{
     font-family:'Space Grotesk';
-    font-size:clamp(32px,5vw,55px);
+
+    font-size:
+        clamp(32px,5vw,55px);
+
     letter-spacing:-.05em;
 }
 
 .section-subtitle{
     max-width:560px;
+
     color:var(--muted);
+
     line-height:1.8;
+
     margin-top:14px;
+
     font-size:14px;
 }
 
-/* ================= ABOUT ================= */
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
 
 .about-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    margin-top:55px;
-}
 
-@media(max-width:800px){
-    .about-grid{
-        grid-template-columns:1fr;
-    }
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    margin-top:55px;
 }
 
 .about-text{
     color:var(--muted);
+
     line-height:1.9;
+
     font-size:15px;
 }
 
@@ -633,66 +861,87 @@ section{
     color:var(--text);
 }
 
-.about-quote{
-    margin-top:25px;
-    padding:20px;
-    border-left:3px solid var(--cyan);
-    background:rgba(53,245,208,.035);
-    border-radius:0 12px 12px 0;
-    color:var(--text);
-    font-family:'Space Grotesk';
-    font-size:18px;
-    line-height:1.6;
-}
-
 .profile-card{
     padding:28px;
+
     border-radius:var(--radius);
+
     border:1px solid var(--line);
+
     background:
-        radial-gradient(circle at top right,rgba(155,124,255,.1),transparent 35%),
+        radial-gradient(
+            circle at top right,
+            rgba(155,124,255,.1),
+            transparent 35%
+        ),
         var(--panel);
+
     box-shadow:var(--shadow);
 }
 
 .profile-top{
     display:flex;
+
     align-items:center;
+
     gap:15px;
+
     padding-bottom:20px;
+
     border-bottom:1px solid var(--line);
 }
 
 .avatar{
     width:55px;
     height:55px;
+
     border-radius:15px;
+
     display:grid;
+
     place-items:center;
+
     font-family:'Space Grotesk';
+
     font-weight:700;
+
     font-size:19px;
-    background:linear-gradient(135deg,var(--cyan),var(--blue));
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--blue)
+        );
+
     color:#03110f;
 }
 
 .profile-name{
     font-family:'Space Grotesk';
+
     font-weight:700;
 }
 
 .profile-role{
     color:var(--muted);
+
     font-size:11px;
+
     margin-top:3px;
 }
 
 .profile-row{
     display:flex;
+
     justify-content:space-between;
+
     padding:15px 0;
+
     border-bottom:1px solid var(--line2);
+
     font-family:'JetBrains Mono';
+
     font-size:10px;
 }
 
@@ -708,119 +957,188 @@ section{
     color:var(--text);
 }
 
-/* ================= SKILLS ================= */
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
 
 .skills-grid{
     margin-top:55px;
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:16px;
-}
-
-@media(max-width:900px){
-    .skills-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:600px){
-    .skills-grid{
-        grid-template-columns:1fr;
-    }
 }
 
 .skill-card{
     padding:25px;
+
     border:1px solid var(--line);
+
     background:var(--panel);
+
     border-radius:var(--radius);
+
     transition:.3s;
 }
 
 .skill-card:hover{
     transform:translateY(-6px);
-    border-color:rgba(53,245,208,.25);
-    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+    border-color:
+        rgba(53,245,208,.25);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.25);
 }
 
 .skill-icon{
     width:42px;
     height:42px;
+
     border-radius:12px;
+
     display:grid;
+
     place-items:center;
+
     font-family:'JetBrains Mono';
+
     font-size:12px;
+
     color:var(--cyan);
-    background:rgba(53,245,208,.08);
-    border:1px solid rgba(53,245,208,.12);
+
+    background:
+        rgba(53,245,208,.08);
+
+    border:
+        1px solid
+        rgba(53,245,208,.12);
 }
 
 .skill-card h3{
     margin-top:20px;
+
     font-family:'Space Grotesk';
+
     font-size:17px;
 }
 
 .skill-card p{
     color:var(--muted);
+
     font-size:12px;
+
     line-height:1.7;
+
     margin-top:7px;
 }
 
 .skill-bar{
     height:5px;
+
     background:#090e18;
+
     border-radius:10px;
+
     margin-top:20px;
+
     overflow:hidden;
 }
 
 .skill-bar i{
     display:block;
-    width:0;
+
     height:100%;
-    background:linear-gradient(90deg,var(--cyan),var(--blue));
+
     border-radius:10px;
-    transition:width 1.4s cubic-bezier(.2,.8,.2,1);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--blue)
+        );
+
+    animation:
+        skillFill 1.5s ease forwards;
+}
+
+@keyframes skillFill{
+
+    from{
+        width:0;
+    }
+
 }
 
 .skill-percent{
     display:flex;
+
     justify-content:space-between;
+
     margin-top:8px;
+
     font-family:'JetBrains Mono';
+
     font-size:9px;
+
     color:var(--muted2);
 }
 
-/* ================= PROJECTS ================= */
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
 
 .projects{
     margin-top:55px;
+
     display:grid;
-    grid-template-columns:repeat(12,1fr);
+
+    grid-template-columns:
+        repeat(12,1fr);
+
     gap:18px;
 }
 
 .project{
     position:relative;
+
     min-height:420px;
+
     padding:28px;
+
     border:1px solid var(--line);
+
     border-radius:var(--radius);
+
     background:
-        linear-gradient(145deg,rgba(255,255,255,.035),transparent 50%),
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            transparent 50%
+        ),
         var(--panel);
+
     overflow:hidden;
+
     transition:.35s;
 }
 
 .project:hover{
     transform:translateY(-8px);
-    border-color:rgba(53,245,208,.25);
-    box-shadow:0 30px 70px rgba(0,0,0,.35);
+
+    border-color:
+        rgba(53,245,208,.25);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.35);
 }
 
 .project:nth-child(1){
@@ -835,97 +1153,158 @@ section{
     grid-column:span 12;
 }
 
-@media(max-width:850px){
-    .project:nth-child(n){
-        grid-column:span 12;
-    }
-}
-
 .project-glow{
     position:absolute;
+
     width:250px;
     height:250px;
+
     right:-100px;
     top:-100px;
+
     border-radius:50%;
-    background:radial-gradient(circle,rgba(53,245,208,.13),transparent 65%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(53,245,208,.13),
+            transparent 65%
+        );
 }
 
 .project:nth-child(2) .project-glow{
-    background:radial-gradient(circle,rgba(155,124,255,.14),transparent 65%);
+    background:
+        radial-gradient(
+            circle,
+            rgba(155,124,255,.14),
+            transparent 65%
+        );
 }
 
 .project:nth-child(3) .project-glow{
-    background:radial-gradient(circle,rgba(77,163,255,.13),transparent 65%);
+    background:
+        radial-gradient(
+            circle,
+            rgba(77,163,255,.13),
+            transparent 65%
+        );
 }
 
 .project-number{
     font-family:'JetBrains Mono';
+
     color:var(--muted2);
+
     font-size:10px;
 }
 
 .project-tag{
     display:inline-flex;
+
     margin-top:25px;
+
     padding:5px 9px;
+
     border-radius:100px;
-    background:rgba(53,245,208,.07);
+
+    background:
+        rgba(53,245,208,.07);
+
     color:var(--cyan);
-    border:1px solid rgba(53,245,208,.12);
+
+    border:
+        1px solid
+        rgba(53,245,208,.12);
+
     font-family:'JetBrains Mono';
+
     font-size:9px;
 }
 
 .project:nth-child(2) .project-tag{
     color:var(--purple);
-    background:rgba(155,124,255,.07);
-    border-color:rgba(155,124,255,.12);
+
+    background:
+        rgba(155,124,255,.07);
+
+    border-color:
+        rgba(155,124,255,.12);
 }
 
 .project:nth-child(3) .project-tag{
     color:var(--blue);
-    background:rgba(77,163,255,.07);
-    border-color:rgba(77,163,255,.12);
+
+    background:
+        rgba(77,163,255,.07);
+
+    border-color:
+        rgba(77,163,255,.12);
 }
 
 .project h3{
     font-family:'Space Grotesk';
+
     font-size:25px;
+
     letter-spacing:-.03em;
+
     margin-top:17px;
+
     max-width:500px;
 }
 
 .project p{
     color:var(--muted);
+
     line-height:1.75;
+
     font-size:13px;
+
     margin-top:10px;
+
     max-width:600px;
 }
 
 .project-points{
     display:flex;
+
     flex-wrap:wrap;
+
     gap:7px;
+
     margin-top:22px;
 }
 
 .project-points span{
     padding:6px 9px;
-    background:rgba(255,255,255,.04);
-    border:1px solid var(--line2);
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        var(--line2);
+
     border-radius:7px;
+
     color:var(--muted);
+
     font-family:'JetBrains Mono';
+
     font-size:9px;
 }
 
+
+/* =========================================================
+   PROJECT VISUAL
+   ========================================================= */
+
 .project-visual{
     position:absolute;
+
     right:28px;
     bottom:28px;
+
     width:220px;
     height:120px;
 }
@@ -934,26 +1313,16 @@ section{
     width:340px;
 }
 
-@media(max-width:650px){
-    .project-visual{
-        position:relative;
-        right:auto;
-        bottom:auto;
-        margin-top:30px;
-        width:100%;
-    }
-
-    .project:nth-child(3) .project-visual{
-        width:100%;
-    }
-}
-
 .fake-chart{
     width:100%;
     height:100%;
+
     border:1px solid var(--line2);
+
     border-radius:12px;
+
     background:#080d17;
+
     padding:10px;
 }
 
@@ -962,161 +1331,244 @@ section{
     height:100%;
 }
 
-/* ================= PROCESS ================= */
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
 
 .process{
     margin-top:55px;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:0;
-}
 
-@media(max-width:800px){
-    .process{
-        grid-template-columns:1fr;
-    }
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:0;
 }
 
 .process-step{
     position:relative;
+
     padding:25px;
+
     border:1px solid var(--line);
-    background:rgba(255,255,255,.015);
+
+    background:
+        rgba(255,255,255,.015);
 }
 
 .process-step:not(:last-child)::after{
     content:"→";
+
     position:absolute;
+
     right:-9px;
     top:50%;
-    transform:translateY(-50%);
-    z-index:3;
-    color:var(--cyan);
-    background:var(--bg);
-    padding:2px 4px;
-}
 
-@media(max-width:800px){
-    .process-step:not(:last-child)::after{
-        content:"↓";
-        right:50%;
-        top:auto;
-        bottom:-13px;
-        transform:translateX(50%);
-    }
+    transform:
+        translateY(-50%);
+
+    z-index:3;
+
+    color:var(--cyan);
+
+    background:var(--bg);
+
+    padding:2px 4px;
 }
 
 .process-icon{
     font-family:'JetBrains Mono';
+
     color:var(--cyan);
+
     font-size:11px;
 }
 
 .process-step h3{
     font-family:'Space Grotesk';
+
     margin-top:25px;
+
     font-size:17px;
 }
 
 .process-step p{
     margin-top:7px;
+
     color:var(--muted);
+
     font-size:12px;
+
     line-height:1.7;
 }
 
-/* ================= EXPERIENCE ================= */
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
 
 .timeline{
     margin-top:55px;
+
     max-width:850px;
+
     position:relative;
+
     margin-left:auto;
     margin-right:auto;
 }
 
 .timeline::before{
     content:"";
+
     position:absolute;
+
     left:18px;
+
     top:0;
     bottom:0;
+
     width:1px;
-    background:linear-gradient(var(--cyan),rgba(53,245,208,.05));
+
+    background:
+        linear-gradient(
+            var(--cyan),
+            rgba(53,245,208,.05)
+        );
 }
 
 .timeline-item{
     position:relative;
+
     padding-left:65px;
+
     margin-bottom:45px;
 }
 
 .timeline-dot{
     position:absolute;
+
     left:12px;
     top:5px;
+
     width:13px;
     height:13px;
+
     border:3px solid var(--bg);
+
     border-radius:50%;
+
     background:var(--cyan);
-    box-shadow:0 0 15px rgba(53,245,208,.4);
+
+    box-shadow:
+        0 0 15px
+        rgba(53,245,208,.4);
 }
 
 .timeline-date{
     font-family:'JetBrains Mono';
+
     color:var(--cyan);
+
     font-size:9px;
 }
 
 .timeline-item h3{
     margin-top:9px;
+
     font-family:'Space Grotesk';
+
     font-size:20px;
 }
 
 .timeline-item p{
     color:var(--muted);
+
     font-size:13px;
+
     line-height:1.8;
+
     margin-top:8px;
 }
 
-/* ================= CONTACT ================= */
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
 
 .contact-box{
     margin-top:55px;
+
     padding:55px;
+
     border:1px solid var(--line);
+
     border-radius:28px;
+
     position:relative;
+
     overflow:hidden;
+
     background:
-        radial-gradient(circle at 80% 20%,rgba(155,124,255,.13),transparent 35%),
-        radial-gradient(circle at 10% 100%,rgba(53,245,208,.09),transparent 35%),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(155,124,255,.13),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 100%,
+            rgba(53,245,208,.09),
+            transparent 35%
+        ),
         rgba(13,18,30,.75);
 }
 
 .contact-box::before{
     content:"";
+
     position:absolute;
+
     inset:0;
+
     background:
-        linear-gradient(90deg,transparent 49%,rgba(255,255,255,.03) 50%,transparent 51%),
-        linear-gradient(transparent 49%,rgba(255,255,255,.03) 50%,transparent 51%);
+        linear-gradient(
+            90deg,
+            transparent 49%,
+            rgba(255,255,255,.03) 50%,
+            transparent 51%
+        ),
+        linear-gradient(
+            transparent 49%,
+            rgba(255,255,255,.03) 50%,
+            transparent 51%
+        );
+
     background-size:60px 60px;
-    mask-image:linear-gradient(to bottom,black,transparent);
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
 }
 
 .contact-content{
     position:relative;
+
     z-index:2;
 }
 
 .contact-box h2{
     font-family:'Space Grotesk';
-    font-size:clamp(35px,6vw,65px);
+
+    font-size:
+        clamp(35px,6vw,65px);
+
     letter-spacing:-.05em;
+
     max-width:700px;
 }
 
@@ -1126,1289 +1578,2647 @@ section{
 
 .contact-box p{
     color:var(--muted);
+
     max-width:550px;
+
     line-height:1.8;
+
     margin-top:15px;
 }
 
 .contact-links{
     display:flex;
+
     flex-wrap:wrap;
+
     gap:10px;
+
     margin-top:30px;
 }
 
 .contact-link{
     padding:12px 15px;
+
     border:1px solid var(--line);
-    background:rgba(255,255,255,.025);
+
+    background:
+        rgba(255,255,255,.025);
+
     border-radius:10px;
+
     font-family:'JetBrains Mono';
+
     font-size:10px;
+
     transition:.25s;
 }
 
 .contact-link:hover{
     color:var(--cyan);
-    border-color:rgba(53,245,208,.3);
+
+    border-color:
+        rgba(53,245,208,.3);
+
     transform:translateY(-3px);
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer{
     padding:30px 0 45px;
+
     border-top:1px solid var(--line);
 }
 
 .footer-inner{
     display:flex;
+
     justify-content:space-between;
+
     gap:20px;
+
     color:var(--muted2);
+
     font-family:'JetBrains Mono';
+
     font-size:9px;
 }
 
-@media(max-width:600px){
-    .footer-inner{
-        flex-direction:column;
-    }
-}
 
-/* ================= REVEAL ================= */
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
 
-.reveal{
-    opacity:0;
-    transform:translateY(35px);
-    transition:
-        opacity .8s ease,
-        transform .8s cubic-bezier(.2,.8,.2,1);
-}
-
-.reveal.visible{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:600px){
+@media(max-width:900px){
 
     .container{
-        width:min(100% - 28px,var(--max));
+        width:min(
+            100% - 32px,
+            var(--max)
+        );
     }
 
-    section{
-        padding:85px 0;
+    .nav{
+        top:10px;
+
+        width:
+            calc(100% - 20px);
+    }
+
+    .nav-inner{
+        height:58px;
+
+        padding:0 14px;
+    }
+
+    .nav-links{
+        display:none;
     }
 
     .hero{
-        padding-top:120px;
+        min-height:auto;
+
+        padding:
+            120px 0 60px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+
+        gap:55px;
     }
 
     .hero h1{
-        font-size:48px;
+        font-size:
+            clamp(48px,10vw,72px);
+    }
+
+    .hero-description{
+        max-width:680px;
     }
 
     .dashboard{
-        min-height:390px;
+        width:min(100%,650px);
+
+        margin:auto;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+
+        gap:35px;
+    }
+
+    .skills-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .project:nth-child(1),
+    .project:nth-child(2),
+    .project:nth-child(3){
+        grid-column:span 12;
+    }
+
+    .project-visual{
+        position:relative;
+
+        right:auto;
+        bottom:auto;
+
+        margin-top:30px;
+
+        width:
+            min(100%,400px);
+    }
+
+    .project:nth-child(3) .project-visual{
+        width:
+            min(100%,500px);
+    }
+
+    .process{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:12px;
+    }
+
+    .process-step:not(:last-child)::after{
+        display:none;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:600px){
+
+    html{
+        overflow-x:hidden;
+    }
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .container{
+        width:
+            calc(100% - 28px);
+    }
+
+
+    /* NAV */
+
+    .nav{
+        top:8px;
+
+        width:
+            calc(100% - 16px);
+    }
+
+    .nav-inner{
+        height:56px;
+
+        border-radius:15px;
+
+        padding:0 12px;
+    }
+
+    .logo{
+        gap:7px;
+
+        font-size:11px;
+    }
+
+    .logo-mark{
+        width:29px;
+        height:29px;
+
+        border-radius:8px;
+
+        font-size:12px;
+    }
+
+    .nav-status{
+        font-size:7px;
+
+        gap:5px;
+    }
+
+    .status-dot{
+        width:6px;
+        height:6px;
+    }
+
+
+    /* HERO */
+
+    .hero{
+        padding:
+            110px 0 50px;
+
+        min-height:auto;
+    }
+
+    .hero-grid{
+        gap:45px;
+    }
+
+    .eyebrow{
+        font-size:8px;
+
+        padding:6px 9px;
+
+        margin-bottom:20px;
+    }
+
+    .hero h1{
+        font-size:
+            clamp(43px,13vw,58px);
+
+        line-height:.98;
+
+        letter-spacing:-.055em;
+    }
+
+    .hero-description{
+        font-size:14px;
+
+        line-height:1.75;
+
+        margin-top:22px;
+    }
+
+    .hero-buttons{
+        margin-top:25px;
+
+        flex-direction:column;
+
+        width:100%;
+    }
+
+    .btn{
+        width:100%;
+
+        justify-content:center;
+
+        padding:14px 16px;
+    }
+
+
+    /* DASHBOARD */
+
+    .dashboard{
+        min-height:360px;
+
+        width:100%;
     }
 
     .main-dashboard{
-        inset:25px 0 15px;
+        inset:20px 0 20px;
+
+        padding:16px;
+
+        transform:rotate(0deg);
+
+        border-radius:17px;
+    }
+
+    .dash-top{
+        margin-bottom:18px;
+    }
+
+    .dash-title{
+        font-size:8px;
+    }
+
+    .dash-live{
+        font-size:7px;
+    }
+
+    .dash-label{
+        font-size:8px;
+    }
+
+    .big-number{
+        font-size:30px;
+
+        margin-top:4px;
+    }
+
+    .big-number span{
+        font-size:12px;
+    }
+
+    .chart{
+        height:125px;
+
+        margin-top:20px;
+    }
+
+    .chart-grid{
+        background-size:
+            40px 32px;
+    }
+
+    .dash-stats{
+        gap:6px;
+
+        margin-top:10px;
+    }
+
+    .mini-stat{
+        padding:8px;
+    }
+
+    .mini-stat b{
+        font-size:12px;
+    }
+
+    .mini-stat small{
+        font-size:6px;
+    }
+
+    .float-card{
+        min-width:120px;
+
+        padding:10px;
+
+        border-radius:12px;
     }
 
     .float-card.one{
-        right:-5px;
+        top:-5px;
+        right:-3px;
     }
 
     .float-card.two{
-        left:-5px;
+        bottom:0;
+        left:-3px;
     }
+
+    .float-head{
+        font-size:7px;
+    }
+
+    .float-value{
+        font-size:16px;
+
+        margin-top:6px;
+    }
+
+    .bars{
+        height:35px;
+    }
+
+
+    /* KPI */
+
+    .kpis{
+        margin-top:45px;
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .kpi{
+        padding:16px 12px;
+    }
+
+    .kpi-number{
+        font-size:23px;
+    }
+
+    .kpi-label{
+        font-size:7px;
+    }
+
+
+    /* SECTIONS */
+
+    section{
+        padding:75px 0;
+    }
+
+    .section-number{
+        font-size:8px;
+    }
+
+    .section-title{
+        font-size:
+            clamp(31px,9vw,42px);
+
+        line-height:1.05;
+    }
+
+    .section-subtitle{
+        font-size:13px;
+
+        line-height:1.7;
+
+        margin-top:12px;
+    }
+
+
+    /* ABOUT */
+
+    .about-grid{
+        margin-top:35px;
+
+        gap:25px;
+    }
+
+    .about-text{
+        font-size:14px;
+
+        line-height:1.8;
+    }
+
+    .profile-card{
+        padding:20px;
+
+        border-radius:17px;
+    }
+
+    .profile-top{
+        gap:12px;
+
+        padding-bottom:16px;
+    }
+
+    .avatar{
+        width:48px;
+        height:48px;
+
+        font-size:16px;
+    }
+
+    .profile-name{
+        font-size:14px;
+    }
+
+    .profile-role{
+        font-size:9px;
+    }
+
+    .profile-row{
+        padding:12px 0;
+
+        font-size:8px;
+
+        gap:10px;
+    }
+
+    .profile-row span:last-child{
+        text-align:right;
+    }
+
+
+    /* SKILLS */
+
+    .skills-grid{
+        margin-top:35px;
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+    }
+
+    .skill-card{
+        padding:20px;
+
+        border-radius:17px;
+    }
+
+    .skill-icon{
+        width:38px;
+        height:38px;
+
+        border-radius:10px;
+
+        font-size:10px;
+    }
+
+    .skill-card h3{
+        margin-top:15px;
+
+        font-size:16px;
+    }
+
+    .skill-card p{
+        font-size:11px;
+
+        line-height:1.65;
+    }
+
+
+    /* PROJECTS */
+
+    .projects{
+        margin-top:35px;
+
+        grid-template-columns:1fr;
+
+        gap:14px;
+    }
+
+    .project,
+    .project:nth-child(1),
+    .project:nth-child(2),
+    .project:nth-child(3){
+
+        grid-column:span 1;
+
+        min-height:auto;
+
+        padding:20px;
+
+        border-radius:17px;
+    }
+
+    .project:hover{
+        transform:translateY(-4px);
+    }
+
+    .project-number{
+        font-size:8px;
+    }
+
+    .project-tag{
+        margin-top:18px;
+
+        font-size:7px;
+    }
+
+    .project h3{
+        font-size:21px;
+
+        line-height:1.15;
+
+        margin-top:13px;
+    }
+
+    .project p{
+        font-size:12px;
+
+        line-height:1.7;
+    }
+
+    .project-points{
+        gap:5px;
+
+        margin-top:17px;
+    }
+
+    .project-points span{
+        font-size:7px;
+
+        padding:5px 7px;
+    }
+
+    .project-visual,
+    .project:nth-child(3) .project-visual{
+
+        position:relative;
+
+        width:100%;
+
+        height:110px;
+
+        right:auto;
+
+        bottom:auto;
+
+        margin-top:25px;
+    }
+
+
+    /* PROCESS */
+
+    .process{
+        margin-top:35px;
+
+        grid-template-columns:1fr;
+
+        gap:10px;
+    }
+
+    .process-step{
+        padding:20px;
+
+        border-radius:14px;
+    }
+
+    .process-step:not(:last-child)::after{
+
+        display:block;
+
+        content:"↓";
+
+        right:50%;
+
+        top:auto;
+
+        bottom:-15px;
+
+        transform:
+            translateX(50%);
+
+        background:var(--bg);
+
+        padding:2px 5px;
+    }
+
+    .process-icon{
+        font-size:8px;
+    }
+
+    .process-step h3{
+        margin-top:18px;
+
+        font-size:16px;
+    }
+
+    .process-step p{
+        font-size:11px;
+
+        line-height:1.65;
+    }
+
+
+    /* TIMELINE */
+
+    .timeline{
+        margin-top:40px;
+    }
+
+    .timeline::before{
+        left:11px;
+    }
+
+    .timeline-item{
+        padding-left:38px;
+
+        margin-bottom:35px;
+    }
+
+    .timeline-dot{
+        left:5px;
+
+        width:13px;
+        height:13px;
+    }
+
+    .timeline-date{
+        font-size:8px;
+    }
+
+    .timeline-item h3{
+        font-size:17px;
+
+        line-height:1.25;
+    }
+
+    .timeline-item p{
+        font-size:12px;
+
+        line-height:1.7;
+    }
+
+
+    /* CONTACT */
 
     .contact-box{
-        padding:30px 22px;
-    }
-}
-</style>
+        margin-top:35px;
 
+        padding:28px 18px;
+
+        border-radius:20px;
+    }
+
+    .contact-box h2{
+        font-size:
+            clamp(34px,10vw,46px);
+
+        line-height:1;
+    }
+
+    .contact-box p{
+        font-size:12px;
+
+        line-height:1.7;
+    }
+
+    .contact-links{
+        flex-direction:column;
+
+        gap:8px;
+
+        margin-top:24px;
+    }
+
+    .contact-link{
+        width:100%;
+
+        text-align:center;
+
+        padding:13px;
+
+        font-size:8px;
+    }
+
+
+    /* FOOTER */
+
+    footer{
+        padding:25px 0 35px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+
+        gap:10px;
+
+        text-align:center;
+
+        align-items:center;
+
+        font-size:7px;
+    }
+
+
+    /* MOBILE PERFORMANCE */
+
+    .cursor-glow{
+        display:none;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media(max-width:380px){
+
+    .container{
+        width:
+            calc(100% - 22px);
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .logo{
+        font-size:9px;
+    }
+
+    .nav-status{
+        font-size:6px;
+    }
+
+    .main-dashboard{
+        padding:13px;
+    }
+
+    .big-number{
+        font-size:26px;
+    }
+
+    .chart{
+        height:105px;
+    }
+
+    .kpi-number{
+        font-size:20px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+    .project h3{
+        font-size:19px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-<div class="cursor-glow" id="cursorGlow"></div>
 
-<!-- ================= NAV ================= -->
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
 
 <nav class="nav">
+
     <div class="nav-inner">
 
+        <a href="#home" class="logo">
 
-    <a href="#home" class="logo">
-        <span class="logo-mark">V</span>
-        <span>VANSH Raj Yadav</span>
-    </a>
+            <span class="logo-mark">
+                V
+            </span>
 
-    <div class="nav-links">
-        <a href="#about">ABOUT</a>
-        <a href="#skills">STACK</a>
-        <a href="#projects">WORK</a>
-        <a href="#journey">JOURNEY</a>
-        <a href="#contact">CONTACT</a>
+            <span>
+                VANSH.DEV
+            </span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="#about">
+                ABOUT
+            </a>
+
+            <a href="#skills">
+                STACK
+            </a>
+
+            <a href="#projects">
+                WORK
+            </a>
+
+            <a href="#journey">
+                JOURNEY
+            </a>
+
+            <a href="#contact">
+                CONTACT
+            </a>
+
+        </div>
+
+
+        <div class="nav-status">
+
+            <span class="status-dot"></span>
+
+            AVAILABLE
+
+        </div>
+
     </div>
-
-    <div class="nav-status">
-        <span class="status-dot"></span>
-        AVAILABLE
-    </div>
-
-</div>
 
 </nav>
 
-<!-- ================= HERO ================= -->
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
 
 <main>
 
 <section class="hero" id="home">
 
+    <div class="container">
 
-<canvas id="particles"></canvas>
+        <div class="hero-grid">
 
-<div class="container">
 
-    <div class="hero-grid">
+            <!-- HERO CONTENT -->
 
-        <div>
+            <div>
 
-            <div class="eyebrow">
-                <span class="status-dot"></span>
-                DATA ANALYST · AGRA, INDIA
+                <div class="eyebrow">
+
+                    <span class="status-dot"></span>
+
+                    ASPIRING DATA ANALYST · AGRA, INDIA
+
+                </div>
+
+
+                <h1>
+
+                    Turning
+
+                    <span class="outline">
+                        raw
+                    </span>
+
+                    data into
+
+                    <span class="gradient">
+                        decisions.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    I'm Vansh Raj Yadav — a curious and motivated
+                    aspiring Data Analyst who enjoys transforming
+                    raw information into meaningful insights.
+                    I am continuously building my skills in SQL,
+                    Python, Java, Power BI, Excel and data visualization
+                    through practical projects and hands-on learning.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#projects"
+                        class="btn btn-primary">
+
+                        Explore my work →
+
+                    </a>
+
+
+                    <a
+                        href="#contact"
+                        class="btn btn-secondary">
+
+                        Let's connect
+
+                    </a>
+
+                </div>
+
             </div>
 
-            <h1>
-                Turning
-                <span class="outline">raw</span>
-                data into
-                <span class="gradient">decisions.</span>
-            </h1>
 
-            <p class="hero-description">
-                I'm Vansh Raj Yadav — an aspiring Data Analyst who
-                enjoys transforming messy information into meaningful
-                insights through SQL, Python, Power BI, Excel and
-                data visualization.
-            </p>
+            <!-- DASHBOARD -->
 
-            <div class="hero-buttons">
+            <div class="dashboard">
 
-                <a href="#projects" class="btn btn-primary">
-                    Explore my work →
-                </a>
 
-                <a href="#contact" class="btn btn-secondary">
-                    Let's connect
-                </a>
+                <div class="dashboard-card main-dashboard">
+
+
+                    <div class="dash-top">
+
+                        <span class="dash-title">
+                            /analytics/profile
+                        </span>
+
+                        <span class="dash-live">
+                            ● LEARNING
+                        </span>
+
+                    </div>
+
+
+                    <div class="dash-label">
+                        DATA ANALYTICS JOURNEY
+                    </div>
+
+
+                    <div class="big-number">
+
+                        2027
+
+                        <span>
+                            TARGET
+                        </span>
+
+                    </div>
+
+
+                    <div class="chart">
+
+                        <div class="chart-grid"></div>
+
+
+                        <svg
+                            viewBox="0 0 500 180"
+                            preserveAspectRatio="none">
+
+                            <defs>
+
+                                <linearGradient
+                                    id="areaGradient"
+                                    x1="0"
+                                    x2="0"
+                                    y1="0"
+                                    y2="1">
+
+                                    <stop
+                                        offset="0%"
+                                        stop-color="#35f5d0"/>
+
+                                    <stop
+                                        offset="100%"
+                                        stop-color="#35f5d0"
+                                        stop-opacity="0"/>
+
+                                </linearGradient>
+
+                            </defs>
+
+
+                            <path
+                                class="chart-area"
+                                d="M0 155
+                                C50 140 65 120 100 130
+                                S145 105 180 120
+                                S220 75 250 95
+                                S300 60 330 75
+                                S370 35 405 60
+                                S450 25 500 10
+                                L500 180
+                                L0 180 Z"/>
+
+
+                            <path
+                                class="chart-line"
+                                d="M0 155
+                                C50 140 65 120 100 130
+                                S145 105 180 120
+                                S220 75 250 95
+                                S300 60 330 75
+                                S370 35 405 60
+                                S450 25 500 10"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="dash-stats">
+
+
+                        <div class="mini-stat">
+
+                            <b>
+                                SQL
+                            </b>
+
+                            <small>
+                                ANALYSIS
+                            </small>
+
+                        </div>
+
+
+                        <div class="mini-stat">
+
+                            <b>
+                                PY
+                            </b>
+
+                            <small>
+                                CLEANING
+                            </small>
+
+                        </div>
+
+
+                        <div class="mini-stat">
+
+                            <b>
+                                BI
+                            </b>
+
+                            <small>
+                                VISUALS
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- FLOAT CARD -->
+
+                <div class="dashboard-card float-card one">
+
+                    <div class="float-head">
+
+                        <span>
+                            CURRENT FOCUS
+                        </span>
+
+                        <span class="up">
+                            +SKILL
+                        </span>
+
+                    </div>
+
+
+                    <div class="float-value">
+                        Analytics
+                    </div>
+
+
+                    <div class="bars">
+
+                        <i
+                            class="bar"
+                            style="height:30%">
+                        </i>
+
+                        <i
+                            class="bar"
+                            style="height:45%">
+                        </i>
+
+                        <i
+                            class="bar"
+                            style="height:55%">
+                        </i>
+
+                        <i
+                            class="bar"
+                            style="height:68%">
+                        </i>
+
+                        <i
+                            class="bar"
+                            style="height:78%">
+                        </i>
+
+                        <i
+                            class="bar"
+                            style="height:92%">
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FLOAT CARD 2 -->
+
+                <div class="dashboard-card float-card two">
+
+                    <div class="float-head">
+
+                        <span>
+                            MINDSET
+                        </span>
+
+                        <span>
+                            DATA
+                        </span>
+
+                    </div>
+
+
+                    <div class="float-value">
+                        Learn. Build.
+                    </div>
+
+
+                    <div class="up">
+                        Improve every day
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
-        <!-- ANALYTICS DASHBOARD -->
 
-        <div class="dashboard">
+        <!-- KPI -->
 
-            <div class="dashboard-card main-dashboard">
+        <div class="kpis">
 
-                <div class="dash-top">
 
-                    <span class="dash-title">
-                        /analytics/overview
-                    </span>
+            <div class="kpi">
 
-                    <span class="dash-live">
-                        ● LIVE DATA
-                    </span>
-
+                <div class="kpi-number">
+                    03
                 </div>
 
-                <div class="dash-label">
-                   DATASETS ANALYZED
-                </div>
-
-                <div class="big-number">
-                   4 <span>↑ 1 NEW</span>
-                </div>
-
-                <div class="chart">
-
-                    <div class="chart-grid"></div>
-
-                    <svg viewBox="0 0 500 180"
-                         preserveAspectRatio="none">
-
-                        <defs>
-
-                            <linearGradient
-                                id="areaGradient"
-                                x1="0"
-                                x2="0"
-                                y1="0"
-                                y2="1">
-
-                                <stop offset="0%"
-                                      stop-color="#35f5d0"/>
-
-                                <stop offset="100%"
-                                      stop-color="#35f5d0"
-                                      stop-opacity="0"/>
-
-                            </linearGradient>
-
-                        </defs>
-
-                        <path
-                            class="chart-area"
-                            d="M0 155
-                               C50 140 65 120 100 130
-                               S145 105 180 120
-                               S220 75 250 95
-                               S300 60 330 75
-                               S370 35 405 60
-                               S450 25 500 10
-                               L500 180 L0 180 Z"/>
-
-                        <path
-                            class="chart-line"
-                            d="M0 155
-                               C50 140 65 120 100 130
-                               S145 105 180 120
-                               S220 75 250 95
-                               S300 60 330 75
-                               S370 35 405 60
-                               S450 25 500 10"/>
-
-                    </svg>
-
-                </div>
-
-                <div class="dash-stats">
-
-                <div class="mini-stat">
-                    <b>12</b>
-                    <small>DATASETS</small>
-                </div>
-
-                <div class="mini-stat">
-                    <b>3</b>
-                    <small>PROJECTS</small>
-                </div>
-
-                <div class="mini-stat">
-                    <b>5+</b>
-                    <small>TOOLS</small>
-                </div>
-
+                <div class="kpi-label">
+                    PROJECTS
                 </div>
 
             </div>
 
-            <div class="dashboard-card float-card one">
 
-            <div class="float-head">
-                <span>LEARNING</span>
-                <span class="up">+24.8%</span>
-            </div>
+            <div class="kpi">
 
-            <div class="float-value">
-                Data Skills
-            </div>
+                <div class="kpi-number">
+                    SQL
+                </div>
 
-                <div class="bars">
-
-                    <i class="bar" style="height:30%"></i>
-                    <i class="bar" style="height:45%"></i>
-                    <i class="bar" style="height:35%"></i>
-                    <i class="bar" style="height:60%"></i>
-                    <i class="bar" style="height:75%"></i>
-                    <i class="bar" style="height:92%"></i>
-
+                <div class="kpi-label">
+                    CORE SKILL
                 </div>
 
             </div>
 
-            <div class="dashboard-card float-card two">
 
-                <div class="float-head">
-                    <span>FOCUS AREA</span>
-                    <span>DATA</span>
+            <div class="kpi">
+
+                <div class="kpi-number">
+                    2027
                 </div>
 
-                <div class="float-value">
-                    Analytics
-                </div>
-
-                <div class="up">
-                    Learning • Building • Improving
+                <div class="kpi-label">
+                    GRADUATION
                 </div>
 
             </div>
+
+
+            <div class="kpi">
+
+                <div class="kpi-number">
+                    01
+                </div>
+
+                <div class="kpi-label">
+                    BRAND OPERATED
+                </div>
+
+            </div>
+
 
         </div>
 
     </div>
-
-    <div class="kpis">
-
-        <div class="kpi">
-
-            <div class="kpi-number">
-                <span class="counter" data-target="3">0</span>
-            </div>
-
-            <div class="kpi-label">
-                PROJECTS
-            </div>
-
-        </div>
-
-        <div class="kpi">
-
-            <div class="kpi-number">
-                <span class="counter" data-target="1200">0</span>+
-            </div>
-
-            <div class="kpi-label">
-                SQL LINES
-            </div>
-
-        </div>
-
-        <div class="kpi">
-
-            <div class="kpi-number">
-                <span class="counter" data-target="2027">0</span>
-            </div>
-
-            <div class="kpi-label">
-                GRADUATION
-            </div>
-
-        </div>
-
-        <div class="kpi">
-
-            <div class="kpi-number">
-                <span class="counter" data-target="1">0</span>
-            </div>
-
-            <div class="kpi-label">
-                BRAND OPERATED
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
 
 </section>
 
-<!-- ================= ABOUT ================= -->
+
+<!-- =====================================================
+     ABOUT
+     ===================================================== -->
 
 <section id="about">
 
 <div class="container">
 
 
-<div class="reveal">
+    <div>
 
-    <div class="section-number">
-        01 / PROFILE
-    </div>
-
-    <h2 class="section-title">
-        Curious mind. Analytical thinking.
-    </h2>
-
-    <p class="section-subtitle">
-        I believe great analysis is not about making data complicated.
-        It's about making complex information simple enough to act on.
-    </p>
-
-</div>
-
-<div class="about-grid">
-
-    <div class="about-text reveal">
-
-        <p>
-            I am a passionate aspiring
-            <strong class="about-highlight">
-                Data Analyst
-            </strong>
-            driven by curiosity, problem-solving and the desire
-            to turn information into meaningful decisions.
-        </p>
-
-        <p>
-            My journey revolves around understanding how data behaves,
-            finding the story hidden inside it and presenting that story
-            in a way that businesses and people can actually understand.
-            From cleaning imperfect datasets to exploring patterns and
-            building dashboards, I enjoy every stage of the analytical
-            process.
-        </p>
-
-        <p>
-            I work with
-            <strong class="about-highlight">
-                SQL, Python, Excel, Power BI, Java
-            </strong>
-            and modern data visualization techniques while continuously
-            improving my analytical and technical skills through
-            hands-on projects.
-        </p>
-
-        <div class="about-quote">
-            "I don't want to just work with data.
-            I want to understand it, question it,
-            and turn it into something that creates impact."
+        <div class="section-number">
+            01 / PROFILE
         </div>
 
+
+        <h2 class="section-title">
+            More than just numbers.
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            I believe data becomes powerful when curiosity,
+            logic and creativity come together.
+
+        </p>
+
     </div>
 
-    <div class="profile-card reveal">
 
-        <div class="profile-top">
+    <div class="about-grid">
 
-            <div class="avatar">
-                VRY
-            </div>
 
-            <div>
+        <div class="about-text">
 
-                <div class="profile-name">
-                    Vansh Raj Yadav
+            <p>
+
+                I am an aspiring Data Analyst who is passionate
+                about understanding how information can be turned
+                into meaningful stories and better decisions.
+
+            </p>
+
+
+            <p>
+
+                My journey is focused on building strong foundations
+                in SQL, Python, Java, Excel, Power BI and databases,
+                while continuously improving my ability to clean,
+                explore and visualize data.
+
+            </p>
+
+
+            <p>
+
+                Instead of simply learning tools, I try to understand
+                the problem behind the data. Every project gives me
+                an opportunity to ask better questions, discover
+                patterns and communicate insights more clearly.
+
+            </p>
+
+
+            <p>
+
+                I also run
+                <strong class="about-highlight">
+                    VPlurxure
+                </strong>,
+                a small luxury clothing and accessories brand.
+                This experience has helped me look at data from a
+                practical business perspective and understand how
+                information can support real decisions.
+
+            </p>
+
+
+            <p>
+
+                I am at the beginning of my professional journey,
+                but I am committed to learning, experimenting and
+                building something better with every project.
+
+            </p>
+
+        </div>
+
+
+        <!-- PROFILE CARD -->
+
+        <div class="profile-card">
+
+
+            <div class="profile-top">
+
+                <div class="avatar">
+                    VRY
                 </div>
 
-                <div class="profile-role">
-                    Aspiring Data Analyst
+
+                <div>
+
+                    <div class="profile-name">
+                        Vansh Raj Yadav
+                    </div>
+
+                    <div class="profile-role">
+                        Aspiring Data Analyst
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
 
-        <div class="profile-row">
-            <span>LOCATION</span>
-            <span>Agra, India</span>
-        </div>
+            <div class="profile-row">
 
-        <div class="profile-row">
-            <span>UNIVERSITY</span>
-            <span>GLA University</span>
-        </div>
+                <span>
+                    LOCATION
+                </span>
 
-        <div class="profile-row">
-            <span>DEGREE</span>
-            <span>BCA · 2027</span>
-        </div>
+                <span>
+                    Agra, India
+                </span>
 
-        <div class="profile-row">
-            <span>FOCUS</span>
-            <span>Data Analytics</span>
-        </div>
+            </div>
 
-        <div class="profile-row">
-            <span>STATUS</span>
-            <span style="color:var(--cyan)">
-                OPEN TO OPPORTUNITIES
-            </span>
+
+            <div class="profile-row">
+
+                <span>
+                    UNIVERSITY
+                </span>
+
+                <span>
+                    GLA University
+                </span>
+
+            </div>
+
+
+            <div class="profile-row">
+
+                <span>
+                    DEGREE
+                </span>
+
+                <span>
+                    BCA · 2027
+                </span>
+
+            </div>
+
+
+            <div class="profile-row">
+
+                <span>
+                    FOCUS
+                </span>
+
+                <span>
+                    Data Analytics
+                </span>
+
+            </div>
+
+
+            <div class="profile-row">
+
+                <span>
+                    EXPERIENCE
+                </span>
+
+                <span>
+                    Fresher
+                </span>
+
+            </div>
+
+
+            <div class="profile-row">
+
+                <span>
+                    STATUS
+                </span>
+
+                <span style="color:var(--cyan)">
+                    OPEN TO OPPORTUNITIES
+                </span>
+
+            </div>
+
+
         </div>
 
     </div>
-
-</div>
-
 
 </div>
 
 </section>
 
-<!-- ================= SKILLS ================= -->
+
+<!-- =====================================================
+     SKILLS
+     ===================================================== -->
 
 <section id="skills">
 
 <div class="container">
 
 
-<div class="reveal">
+    <div>
 
-    <div class="section-number">
-        02 / TOOLKIT
-    </div>
-
-    <h2 class="section-title">
-        My analytical stack.
-    </h2>
-
-    <p class="section-subtitle">
-        The tools and analytical skills I use to move from
-        raw information to useful insight.
-    </p>
-
-</div>
-
-<div class="skills-grid">
-
-    <div class="skill-card reveal">
-
-        <div class="skill-icon">
-            PY
+        <div class="section-number">
+            02 / TOOLKIT
         </div>
 
-        <h3>Python</h3>
 
-        <p>
-            Data analysis, automation and data manipulation
-            using Python and Pandas fundamentals.
+        <h2 class="section-title">
+            My analytical stack.
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            A growing toolkit built through learning,
+            experimentation and practical projects.
+
         </p>
 
-        <div class="skill-bar">
-            <i data-width="68%"></i>
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <!-- PYTHON -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                PY
+            </div>
+
+            <h3>
+                Python
+            </h3>
+
+            <p>
+
+                Data analysis, basic automation,
+                Pandas fundamentals and working
+                with structured datasets.
+
+            </p>
+
+            <div class="skill-bar">
+                <i style="width:68%"></i>
+            </div>
+
+            <div class="skill-percent">
+
+                <span>
+                    BUILDING
+                </span>
+
+                <span>
+                    68%
+                </span>
+
+            </div>
+
         </div>
 
-        <div class="skill-percent">
-            <span>BUILDING</span>
-            <span>68%</span>
+
+        <!-- SQL -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                SQL
+            </div>
+
+            <h3>
+                SQL / MySQL
+            </h3>
+
+            <p>
+
+                Queries, joins, filtering, aggregations
+                and extracting useful information
+                from relational datasets.
+
+            </p>
+
+            <div class="skill-bar">
+                <i style="width:72%"></i>
+            </div>
+
+            <div class="skill-percent">
+
+                <span>
+                    BUILDING
+                </span>
+
+                <span>
+                    72%
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- POWER BI -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                BI
+            </div>
+
+            <h3>
+                Power BI
+            </h3>
+
+            <p>
+
+                Interactive dashboards, business metrics,
+                filters, slicers and visual storytelling.
+
+            </p>
+
+            <div class="skill-bar">
+                <i style="width:62%"></i>
+            </div>
+
+            <div class="skill-percent">
+
+                <span>
+                    BUILDING
+                </span>
+
+                <span>
+                    62%
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXCEL -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                EX
+            </div>
+
+            <h3>
+                Microsoft Excel
+            </h3>
+
+            <p>
+
+                Data organization, formulas, pivot tables,
+                analysis and business reporting.
+
+            </p>
+
+            <div class="skill-bar">
+                <i style="width:78%"></i>
+            </div>
+
+            <div class="skill-percent">
+
+                <span>
+                    COMFORTABLE
+                </span>
+
+                <span>
+                    78%
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- JAVA -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                JV
+            </div>
+
+            <h3>
+                Java
+            </h3>
+
+            <p>
+
+                Object-oriented programming, core Java
+                concepts, problem solving and application
+                development fundamentals.
+
+            </p>
+
+            <div class="skill-bar">
+                <i style="width:60%"></i>
+            </div>
+
+            <div class="skill-percent">
+
+                <span>
+                    BUILDING
+                </span>
+
+                <span>
+                    60%
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- DBMS -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                DB
+            </div>
+
+            <h3>
+                DBMS
+            </h3>
+
+            <p>
+
+                Relational database concepts,
+                normalization, relationships,
+                queries and data structures.
+
+            </p>
+
+            <div class="skill-bar">
+                <i style="width:64%"></i>
+            </div>
+
+            <div class="skill-percent">
+
+                <span>
+                    FOUNDATIONAL
+                </span>
+
+                <span>
+                    64%
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- DATA CLEANING -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                DC
+            </div>
+
+            <h3>
+                Data Cleaning
+            </h3>
+
+            <p>
+
+                Preparing raw datasets by handling
+                missing values, duplicates, inconsistent
+                formats and unnecessary records.
+
+            </p>
+
+            <div class="skill-bar">
+                <i style="width:70%"></i>
+            </div>
+
+            <div class="skill-percent">
+
+                <span>
+                    BUILDING
+                </span>
+
+                <span>
+                    70%
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- DATA VISUALIZATION -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                DV
+            </div>
+
+            <h3>
+                Data Visualization
+            </h3>
+
+            <p>
+
+                Turning datasets into clear charts,
+                dashboards and visual stories using
+                Power BI and Excel.
+
+            </p>
+
+            <div class="skill-bar">
+                <i style="width:65%"></i>
+            </div>
+
+            <div class="skill-percent">
+
+                <span>
+                    BUILDING
+                </span>
+
+                <span>
+                    65%
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- EDA -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                EDA
+            </div>
+
+            <h3>
+                Exploratory Data Analysis
+            </h3>
+
+            <p>
+
+                Exploring datasets, identifying patterns,
+                understanding distributions and discovering
+                relationships between variables.
+
+            </p>
+
+            <div class="skill-bar">
+                <i style="width:63%"></i>
+            </div>
+
+            <div class="skill-percent">
+
+                <span>
+                    BUILDING
+                </span>
+
+                <span>
+                    63%
+                </span>
+
+            </div>
+
         </div>
 
     </div>
-
-    <div class="skill-card reveal">
-
-        <div class="skill-icon">
-            SQL
-        </div>
-
-        <h3>SQL / MySQL</h3>
-
-        <p>
-            Queries, joins, aggregations and extracting
-            useful insights from relational databases.
-        </p>
-
-        <div class="skill-bar">
-            <i data-width="72%"></i>
-        </div>
-
-        <div class="skill-percent">
-            <span>BUILDING</span>
-            <span>72%</span>
-        </div>
-
-    </div>
-
-    <div class="skill-card reveal">
-
-        <div class="skill-icon">
-            BI
-        </div>
-
-        <h3>Power BI</h3>
-
-        <p>
-            Interactive dashboards, KPIs, slicers and
-            visual storytelling for business insights.
-        </p>
-
-        <div class="skill-bar">
-            <i data-width="62%"></i>
-        </div>
-
-        <div class="skill-percent">
-            <span>BUILDING</span>
-            <span>62%</span>
-        </div>
-
-    </div>
-
-    <div class="skill-card reveal">
-
-        <div class="skill-icon">
-            EX
-        </div>
-
-        <h3>Microsoft Excel</h3>
-
-        <p>
-            Data organization, formulas, pivot tables,
-            analysis and business reporting.
-        </p>
-
-        <div class="skill-bar">
-            <i data-width="78%"></i>
-        </div>
-
-        <div class="skill-percent">
-            <span>COMFORTABLE</span>
-            <span>78%</span>
-        </div>
-
-    </div>
-
-    <div class="skill-card reveal">
-
-        <div class="skill-icon">
-            JV
-        </div>
-
-        <h3>Java</h3>
-
-        <p>
-            Object-oriented programming, problem solving,
-            programming fundamentals and application logic.
-        </p>
-
-        <div class="skill-bar">
-            <i data-width="65%"></i>
-        </div>
-
-        <div class="skill-percent">
-            <span>BUILDING</span>
-            <span>65%</span>
-        </div>
-
-    </div>
-
-    <div class="skill-card reveal">
-
-        <div class="skill-icon">
-            DB
-        </div>
-
-        <h3>DBMS</h3>
-
-        <p>
-            Relational database concepts, normalization,
-            data structures and database design.
-        </p>
-
-        <div class="skill-bar">
-            <i data-width="64%"></i>
-        </div>
-
-        <div class="skill-percent">
-            <span>FOUNDATIONAL</span>
-            <span>64%</span>
-        </div>
-
-    </div>
-
-    <div class="skill-card reveal">
-
-        <div class="skill-icon">
-            DC
-        </div>
-
-        <h3>Data Cleaning</h3>
-
-        <p>
-            Preparing raw datasets by handling missing values,
-            duplicates, inconsistent formats and errors.
-        </p>
-
-        <div class="skill-bar">
-            <i data-width="75%"></i>
-        </div>
-
-        <div class="skill-percent">
-            <span>BUILDING</span>
-            <span>75%</span>
-        </div>
-
-    </div>
-
-    <div class="skill-card reveal">
-
-        <div class="skill-icon">
-            DV
-        </div>
-
-        <h3>Data Visualization</h3>
-
-        <p>
-            Creating clear and meaningful charts, dashboards
-            and visual stories that communicate insights.
-        </p>
-
-        <div class="skill-bar">
-            <i data-width="74%"></i>
-        </div>
-
-        <div class="skill-percent">
-            <span>BUILDING</span>
-            <span>74%</span>
-        </div>
-
-    </div>
-
-    <div class="skill-card reveal">
-
-        <div class="skill-icon">
-            EDA
-        </div>
-
-        <h3>Exploratory Data Analysis</h3>
-
-        <p>
-            Exploring datasets, identifying patterns, spotting
-            anomalies and discovering relationships between variables.
-        </p>
-
-        <div class="skill-bar">
-            <i data-width="70%"></i>
-        </div>
-
-        <div class="skill-percent">
-            <span>BUILDING</span>
-            <span>70%</span>
-        </div>
-
-    </div>
-
-</div>
-
 
 </div>
 
 </section>
 
-<!-- ================= PROJECTS ================= -->
+
+<!-- =====================================================
+     PROJECTS
+     ===================================================== -->
 
 <section id="projects">
 
 <div class="container">
 
 
-<div class="reveal">
+    <div>
 
-    <div class="section-number">
-        03 / SELECTED WORK
-    </div>
-
-    <h2 class="section-title">
-        Data, but make it useful.
-    </h2>
-
-    <p class="section-subtitle">
-        Three projects designed around the same principle:
-        don't just analyze the data — answer the question behind it.
-    </p>
-
-</div>
-
-<div class="projects">
-
-    <article class="project reveal">
-
-        <div class="project-glow"></div>
-
-        <div class="project-number">
-            PROJECT / 01
+        <div class="section-number">
+            03 / SELECTED WORK
         </div>
 
-        <span class="project-tag">
-            POWER BI · EXCEL
-        </span>
 
-        <h3>
-            Retail Sales Performance Dashboard
-        </h3>
+        <h2 class="section-title">
+            Data, but make it useful.
+        </h2>
 
-        <p>
-            A visual sales intelligence dashboard for a fashion
-            retail business. Built to quickly understand revenue,
-            categories, sizes and monthly performance.
+
+        <p class="section-subtitle">
+
+            Projects built to strengthen my analytical thinking
+            and understand how data can answer practical questions.
+
         </p>
 
-        <div class="project-points">
-            <span>Revenue Analysis</span>
-            <span>Pivot Tables</span>
-            <span>Category Trends</span>
-            <span>Interactive Slicers</span>
-        </div>
+    </div>
 
-        <div class="project-visual">
 
-            <div class="fake-chart">
+    <div class="projects">
 
-                <svg viewBox="0 0 300 130">
 
-                    <line x1="10" y1="115"
-                          x2="290" y2="115"
-                          stroke="#202a3d"/>
+        <!-- PROJECT 1 -->
 
-                    <rect x="25" y="70"
-                          width="25" height="45"
-                          rx="3"
-                          fill="#35f5d0"/>
+        <article class="project">
 
-                    <rect x="75" y="52"
-                          width="25" height="63"
-                          rx="3"
-                          fill="#35f5d0"/>
+            <div class="project-glow"></div>
 
-                    <rect x="125" y="78"
-                          width="25" height="37"
-                          rx="3"
-                          fill="#4da3ff"/>
 
-                    <rect x="175" y="35"
-                          width="25" height="80"
-                          rx="3"
-                          fill="#4da3ff"/>
+            <div class="project-number">
+                PROJECT / 01
+            </div>
 
-                    <rect x="225" y="20"
-                          width="25" height="95"
-                          rx="3"
-                          fill="#9b7cff"/>
 
-                </svg>
+            <span class="project-tag">
+                POWER BI · EXCEL
+            </span>
+
+
+            <h3>
+                Retail Sales Performance Dashboard
+            </h3>
+
+
+            <p>
+
+                A visual sales dashboard designed to explore
+                revenue, product categories, sizes and monthly
+                performance for a fashion retail dataset.
+
+            </p>
+
+
+            <div class="project-points">
+
+                <span>
+                    Revenue Analysis
+                </span>
+
+                <span>
+                    Pivot Tables
+                </span>
+
+                <span>
+                    Category Trends
+                </span>
+
+                <span>
+                    Interactive Slicers
+                </span>
 
             </div>
 
-        </div>
 
-    </article>
+            <div class="project-visual">
 
-    <article class="project reveal">
+                <div class="fake-chart">
 
-        <div class="project-glow"></div>
+                    <svg viewBox="0 0 300 130">
 
-        <div class="project-number">
-            PROJECT / 02
-        </div>
+                        <line
+                            x1="10"
+                            y1="115"
+                            x2="290"
+                            y2="115"
+                            stroke="#202a3d"/>
 
-        <span class="project-tag">
-            SQL · PYTHON
-        </span>
 
-        <h3>
-            Customer Segmentation
-        </h3>
+                        <rect
+                            x="25"
+                            y="70"
+                            width="25"
+                            height="45"
+                            rx="3"
+                            fill="#35f5d0"/>
 
-        <p>
-            RFM analysis to separate high-value customers,
-            loyal buyers and one-time customers for targeted
-            retention strategies.
-        </p>
 
-        <div class="project-points">
-            <span>Recency</span>
-            <span>Frequency</span>
-            <span>Monetary</span>
-            <span>Pandas</span>
-        </div>
+                        <rect
+                            x="75"
+                            y="52"
+                            width="25"
+                            height="63"
+                            rx="3"
+                            fill="#35f5d0"/>
 
-        <div class="project-visual">
 
-            <div class="fake-chart">
+                        <rect
+                            x="125"
+                            y="78"
+                            width="25"
+                            height="37"
+                            rx="3"
+                            fill="#4da3ff"/>
 
-                <svg viewBox="0 0 300 130">
 
-                    <circle cx="60" cy="50"
+                        <rect
+                            x="175"
+                            y="35"
+                            width="25"
+                            height="80"
+                            rx="3"
+                            fill="#4da3ff"/>
+
+
+                        <rect
+                            x="225"
+                            y="20"
+                            width="25"
+                            height="95"
+                            rx="3"
+                            fill="#9b7cff"/>
+
+                    </svg>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 2 -->
+
+        <article class="project">
+
+            <div class="project-glow"></div>
+
+
+            <div class="project-number">
+                PROJECT / 02
+            </div>
+
+
+            <span class="project-tag">
+                SQL · PYTHON
+            </span>
+
+
+            <h3>
+                Customer Segmentation
+            </h3>
+
+
+            <p>
+
+                An RFM-based analysis exploring customer behavior
+                and grouping customers according to recency,
+                purchase frequency and monetary value.
+
+            </p>
+
+
+            <div class="project-points">
+
+                <span>
+                    Recency
+                </span>
+
+                <span>
+                    Frequency
+                </span>
+
+                <span>
+                    Monetary
+                </span>
+
+                <span>
+                    Pandas
+                </span>
+
+            </div>
+
+
+            <div class="project-visual">
+
+                <div class="fake-chart">
+
+                    <svg viewBox="0 0 300 130">
+
+                        <circle
+                            cx="60"
+                            cy="50"
                             r="25"
                             fill="rgba(53,245,208,.16)"
                             stroke="#35f5d0"/>
 
-                    <circle cx="145" cy="85"
+
+                        <circle
+                            cx="145"
+                            cy="85"
                             r="31"
                             fill="rgba(155,124,255,.16)"
                             stroke="#9b7cff"/>
 
-                    <circle cx="235" cy="45"
+
+                        <circle
+                            cx="235"
+                            cy="45"
                             r="20"
                             fill="rgba(255,95,199,.13)"
                             stroke="#ff5fc7"/>
 
-                    <circle cx="53" cy="47"
+
+                        <circle
+                            cx="53"
+                            cy="47"
                             r="3"
                             fill="#35f5d0"/>
 
-                    <circle cx="68" cy="60"
+
+                        <circle
+                            cx="68"
+                            cy="60"
                             r="3"
                             fill="#35f5d0"/>
 
-                    <circle cx="135" cy="80"
+
+                        <circle
+                            cx="135"
+                            cy="80"
                             r="3"
                             fill="#9b7cff"/>
 
-                    <circle cx="155" cy="90"
+
+                        <circle
+                            cx="155"
+                            cy="90"
                             r="3"
                             fill="#9b7cff"/>
 
-                </svg>
+                    </svg>
+
+                </div>
 
             </div>
 
-        </div>
+        </article>
 
-    </article>
 
-    <article class="project reveal">
+        <!-- PROJECT 3 -->
 
-        <div class="project-glow"></div>
+        <article class="project">
 
-        <div class="project-number">
-            PROJECT / 03
-        </div>
+            <div class="project-glow"></div>
 
-        <span class="project-tag">
-            SQL · PYTHON · POWER BI
-        </span>
 
-        <h3>
-            End-to-End Sales Forecasting Pipeline
-        </h3>
+            <div class="project-number">
+                PROJECT / 03
+            </div>
 
-        <p>
-            A complete analytics pipeline that takes raw order
-            data, transforms it, generates a demand forecast and
-            prepares the results for dashboard reporting.
-        </p>
 
-        <div class="project-points">
-            <span>SQL Extraction</span>
-            <span>Data Cleaning</span>
-            <span>Time Series</span>
-            <span>Forecasting</span>
-            <span>Power BI</span>
-        </div>
+            <span class="project-tag">
+                SQL · PYTHON · POWER BI
+            </span>
 
-        <div class="project-visual">
 
-            <div class="fake-chart">
+            <h3>
+                End-to-End Sales Forecasting Pipeline
+            </h3>
 
-                <svg viewBox="0 0 420 130">
 
-                    <polyline
-                        points="5,100 55,88 105,92 155,62 205,72"
-                        fill="none"
-                        stroke="#35f5d0"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
+            <p>
 
-                    <polyline
-                        points="205,72 255,50 305,57 355,28 415,15"
-                        fill="none"
-                        stroke="#9b7cff"
-                        stroke-width="4"
-                        stroke-dasharray="8 8"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
+                A learning-focused analytics pipeline that explores
+                raw order data, data cleaning, transformation,
+                time-based patterns and preparation of insights
+                for dashboard reporting.
 
-                    <line x1="205" y1="10"
-                          x2="205" y2="120"
-                          stroke="#354158"
-                          stroke-dasharray="4 5"/>
+            </p>
 
-                    <circle cx="205" cy="72"
+
+            <div class="project-points">
+
+                <span>
+                    SQL Extraction
+                </span>
+
+                <span>
+                    Data Cleaning
+                </span>
+
+                <span>
+                    Time Series
+                </span>
+
+                <span>
+                    Exploratory Analysis
+                </span>
+
+                <span>
+                    Power BI
+                </span>
+
+            </div>
+
+
+            <div class="project-visual">
+
+                <div class="fake-chart">
+
+                    <svg viewBox="0 0 420 130">
+
+                        <polyline
+                            points="
+                            5,100
+                            55,88
+                            105,92
+                            155,62
+                            205,72
+                            "
+                            fill="none"
+                            stroke="#35f5d0"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"/>
+
+
+                        <polyline
+                            points="
+                            205,72
+                            255,50
+                            305,57
+                            355,28
+                            415,15
+                            "
+                            fill="none"
+                            stroke="#9b7cff"
+                            stroke-width="4"
+                            stroke-dasharray="8 8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"/>
+
+
+                        <line
+                            x1="205"
+                            y1="10"
+                            x2="205"
+                            y2="120"
+                            stroke="#354158"
+                            stroke-dasharray="4 5"/>
+
+
+                        <circle
+                            cx="205"
+                            cy="72"
                             r="5"
                             fill="#fff"/>
 
-                </svg>
+                    </svg>
+
+                </div>
 
             </div>
 
-        </div>
+        </article>
 
-    </article>
-
-</div>
-
+    </div>
 
 </div>
 
 </section>
 
-<!-- ================= PIPELINE ================= -->
+
+<!-- =====================================================
+     PROCESS
+     ===================================================== -->
 
 <section>
 
 <div class="container">
 
 
-<div class="reveal">
+    <div>
 
-    <div class="section-number">
-        04 / HOW I WORK
-    </div>
-
-    <h2 class="section-title">
-        From chaos to clarity.
-    </h2>
-
-    <p class="section-subtitle">
-        My preferred workflow when approaching an analytics problem.
-    </p>
-
-</div>
-
-<div class="process">
-
-    <div class="process-step reveal">
-
-        <div class="process-icon">
-            01 / EXTRACT
+        <div class="section-number">
+            04 / HOW I WORK
         </div>
 
-        <h3>
-            Find the signal
-        </h3>
 
-        <p>
-            Pull relevant information from spreadsheets,
-            databases or transaction systems.
+        <h2 class="section-title">
+            From chaos to clarity.
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            My approach to learning and solving an analytics problem.
+
         </p>
 
     </div>
 
-    <div class="process-step reveal">
 
-        <div class="process-icon">
-            02 / CLEAN
+    <div class="process">
+
+
+        <div class="process-step">
+
+            <div class="process-icon">
+                01 / EXPLORE
+            </div>
+
+            <h3>
+                Understand the data
+            </h3>
+
+            <p>
+
+                Understand the dataset, identify important
+                columns and ask what questions the data
+                can actually answer.
+
+            </p>
+
         </div>
 
-        <h3>
-            Fix the noise
-        </h3>
 
-        <p>
-            Handle missing values, duplicates, inconsistent
-            formats and messy records.
-        </p>
+        <div class="process-step">
 
-    </div>
+            <div class="process-icon">
+                02 / CLEAN
+            </div>
 
-    <div class="process-step reveal">
+            <h3>
+                Fix the noise
+            </h3>
 
-        <div class="process-icon">
-            03 / ANALYZE
+            <p>
+
+                Handle missing values, duplicates,
+                inconsistent formats and unnecessary
+                records.
+
+            </p>
+
         </div>
 
-        <h3>
-            Find patterns
-        </h3>
 
-        <p>
-            Use SQL, Python and analytical thinking to discover
-            trends, relationships and useful insights.
-        </p>
+        <div class="process-step">
 
-    </div>
+            <div class="process-icon">
+                03 / ANALYZE
+            </div>
 
-    <div class="process-step reveal">
+            <h3>
+                Find patterns
+            </h3>
 
-        <div class="process-icon">
-            04 / COMMUNICATE
+            <p>
+
+                Use SQL, Python and exploratory analysis
+                to discover trends, relationships and
+                useful observations.
+
+            </p>
+
         </div>
 
-        <h3>
-            Tell the story
-        </h3>
 
-        <p>
-            Turn analysis into dashboards and insights
-            that are easy for people to understand and act on.
-        </p>
+        <div class="process-step">
+
+            <div class="process-icon">
+                04 / VISUALIZE
+            </div>
+
+            <h3>
+                Tell the story
+            </h3>
+
+            <p>
+
+                Turn findings into clear dashboards,
+                charts and insights that are easier
+                to understand.
+
+            </p>
+
+        </div>
 
     </div>
-
-</div>
-
 
 </div>
 
 </section>
 
-<!-- ================= JOURNEY ================= -->
+
+<!-- =====================================================
+     JOURNEY
+     ===================================================== -->
 
 <section id="journey">
 
 <div class="container">
 
 
-<div class="reveal">
+    <div>
 
-    <div class="section-number">
-        05 / JOURNEY
-    </div>
-
-    <h2 class="section-title">
-        Currently building.
-    </h2>
-
-    <p class="section-subtitle">
-        A snapshot of the path I'm taking into data analytics.
-    </p>
-
-</div>
-
-<div class="timeline">
-
-    <div class="timeline-item reveal">
-
-        <span class="timeline-dot"></span>
-
-        <div class="timeline-date">
-            2021
+        <div class="section-number">
+            05 / JOURNEY
         </div>
 
-        <h3>
-            High School — St. Andrews School
-        </h3>
 
-        <p>
-            Completed high school in Agra and developed
-            an early interest in technology and computing.
+        <h2 class="section-title">
+            Currently building.
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            A snapshot of my journey from learning technology
+            to building practical analytics skills.
+
         </p>
 
     </div>
 
-    <div class="timeline-item reveal">
 
-        <span class="timeline-dot"></span>
+    <div class="timeline">
 
-        <div class="timeline-date">
-            2024
+
+        <div class="timeline-item">
+
+            <span class="timeline-dot"></span>
+
+
+            <div class="timeline-date">
+                2021
+            </div>
+
+
+            <h3>
+                High School — St. Andrews School
+            </h3>
+
+
+            <p>
+
+                Completed high school in Agra and developed
+                an early interest in technology and computing.
+
+            </p>
+
         </div>
 
-        <h3>
-            Intermediate — St. Andrews School
-        </h3>
 
-        <p>
-            Completed intermediate education and continued
-            developing an interest in technology, programming
-            and problem solving.
-        </p>
+        <div class="timeline-item">
 
-    </div>
+            <span class="timeline-dot"></span>
 
-    <div class="timeline-item reveal">
 
-        <span class="timeline-dot"></span>
+            <div class="timeline-date">
+                2024
+            </div>
 
-        <div class="timeline-date">
-            2025
+
+            <h3>
+                Intermediate — St. Andrews School
+            </h3>
+
+
+            <p>
+
+                Completed intermediate education and began
+                moving deeper into computer applications,
+                programming and technology.
+
+            </p>
+
         </div>
 
-        <h3>
-            Hack The Flame
-        </h3>
 
-        <p>
-            Participated in Hack The Flame at GLA University
-            with Vasantrao Naik Pratishthan's College of
-            Engineering and Visual Arts.
-        </p>
+        <div class="timeline-item">
 
-    </div>
+            <span class="timeline-dot"></span>
 
-    <div class="timeline-item reveal">
 
-        <span class="timeline-dot"></span>
+            <div class="timeline-date">
+                2025
+            </div>
 
-        <div class="timeline-date">
-            2027
+
+            <h3>
+                Hack The Flame
+            </h3>
+
+
+            <p>
+
+                Participated in Hack The Flame at GLA University,
+                gaining experience with teamwork, problem solving
+                and building technology-focused ideas.
+
+            </p>
+
         </div>
 
-        <h3>
-            BCA — GLA University
-        </h3>
 
-        <p>
-            Target graduation year while continuing to build
-            practical projects in analytics, SQL, Python,
-            Java and business intelligence.
-        </p>
+        <div class="timeline-item">
+
+            <span class="timeline-dot"></span>
+
+
+            <div class="timeline-date">
+                2027
+            </div>
+
+
+            <h3>
+                BCA — GLA University
+            </h3>
+
+
+            <p>
+
+                Continuing my academic journey while building
+                practical skills in SQL, Python, Java, databases,
+                data analysis and business intelligence.
+
+            </p>
+
+        </div>
 
     </div>
-
-</div>
-
 
 </div>
 
 </section>
 
-<!-- ================= CONTACT ================= -->
+
+<!-- =====================================================
+     CONTACT
+     ===================================================== -->
 
 <section id="contact">
 
 <div class="container">
 
 
-<div class="contact-box reveal">
+    <div class="contact-box">
 
-    <div class="contact-content">
+        <div class="contact-content">
 
-        <div class="section-number">
-            06 / CONNECT
-        </div>
 
-        <h2>
-            Have data?
-            <span>Let's make it useful.</span>
-        </h2>
+            <div class="section-number">
+                06 / CONNECT
+            </div>
 
-        <p>
-            I'm open to internships, entry-level analyst
-            opportunities, collaborations and interesting
-            data problems.
-        </p>
 
-        <div class="contact-links">
+            <h2>
 
-            <a
-                class="contact-link"
-                href="mailto:Vanshyadav7452@gmail.com">
-                EMAIL →
-            </a>
+                Have data?
 
-            <a
-                class="contact-link"
-                href="tel:+918126470424">
-                PHONE →
-            </a>
+                <span>
+                    Let's make it useful.
+                </span>
 
-            <a
-                class="contact-link"
-                href="https://www.linkedin.com/in/vansh-yadav-559071386"
-                target="_blank"
-                rel="noopener">
-                LINKEDIN ↗
-            </a>
+            </h2>
 
-            <a
-                class="contact-link"
-                href="https://github.com/vanshrajyadavS24bca"
-                target="_blank"
-                rel="noopener">
-                GITHUB ↗
-            </a>
+
+            <p>
+
+                I am open to internships, entry-level opportunities,
+                collaborations and opportunities where I can learn,
+                contribute and grow as a data professional.
+
+            </p>
+
+
+            <div class="contact-links">
+
+
+                <a
+                    class="contact-link"
+                    href="mailto:Vanshyadav7452@gmail.com">
+
+                    EMAIL →
+
+                </a>
+
+
+                <a
+                    class="contact-link"
+                    href="tel:+918126470424">
+
+                    PHONE →
+
+                </a>
+
+
+                <a
+                    class="contact-link"
+                    href="https://www.linkedin.com/in/vansh-yadav-559071386"
+                    target="_blank"
+                    rel="noopener">
+
+                    LINKEDIN ↗
+
+                </a>
+
+
+                <a
+                    class="contact-link"
+                    href="https://github.com/vanshrajyadavS24bca"
+                    target="_blank"
+                    rel="noopener">
+
+                    GITHUB ↗
+
+                </a>
+
+
+            </div>
 
         </div>
 
     </div>
-
-</div>
-
 
 </div>
 
@@ -2416,427 +4226,35 @@ footer{
 
 </main>
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
 
 <footer>
 
 <div class="container">
 
+    <div class="footer-inner">
 
-<div class="footer-inner">
+        <span>
+            © 2026 VANSH RAJ YADAV
+        </span>
 
-    <span>
-        © <span id="year"></span> VANSH RAJ YADAV
-    </span>
+        <span>
+            BUILT WITH HTML · CSS
+        </span>
 
-    <span>
-        BUILT WITH HTML · CSS · JAVA
-    </span>
+        <span style="color:var(--cyan)">
+            ● SYSTEM ONLINE
+        </span>
 
-    <span style="color:var(--cyan)">
-        ● SYSTEM ONLINE
-    </span>
-
-</div>
-
+    </div>
 
 </div>
 
 </footer>
 
-<script>
-
-/* ================= YEAR ================= */
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-
-/* ================= CURSOR GLOW ================= */
-
-const glow = document.getElementById("cursorGlow");
-
-document.addEventListener("mousemove",function(e){
-
-    glow.style.left = e.clientX + "px";
-    glow.style.top = e.clientY + "px";
-
-});
-
-
-/* ================= PARTICLE NETWORK ================= */
-
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-let particles = [];
-let width;
-let height;
-
-function resizeCanvas(){
-
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-
-}
-
-function createParticles(){
-
-    particles = [];
-
-    const count =
-        window.innerWidth < 700 ? 35 : 75;
-
-    for(let i=0;i<count;i++){
-
-        particles.push({
-
-            x:Math.random()*width,
-            y:Math.random()*height,
-
-            vx:(Math.random()-.5)*.35,
-            vy:(Math.random()-.5)*.35,
-
-            r:Math.random()*1.6+.4
-
-        });
-
-    }
-
-}
-
-function drawParticles(){
-
-    ctx.clearRect(0,0,width,height);
-
-    particles.forEach(function(p){
-
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if(p.x<0 || p.x>width)
-            p.vx *= -1;
-
-        if(p.y<0 || p.y>height)
-            p.vy *= -1;
-
-        ctx.beginPath();
-
-        ctx.arc(
-            p.x,
-            p.y,
-            p.r,
-            0,
-            Math.PI*2
-        );
-
-        ctx.fillStyle =
-            "rgba(53,245,208,.55)";
-
-        ctx.fill();
-
-    });
-
-    for(let i=0;i<particles.length;i++){
-
-        for(let j=i+1;j<particles.length;j++){
-
-            const a = particles[i];
-            const b = particles[j];
-
-            const dx = a.x-b.x;
-            const dy = a.y-b.y;
-
-            const distance =
-                Math.sqrt(dx*dx+dy*dy);
-
-            if(distance < 120){
-
-                ctx.beginPath();
-
-                ctx.moveTo(a.x,a.y);
-                ctx.lineTo(b.x,b.y);
-
-                ctx.strokeStyle =
-                    "rgba(53,245,208," +
-                    (1-distance/120)*.12 +
-                    ")";
-
-                ctx.lineWidth = .6;
-
-                ctx.stroke();
-
-            }
-
-        }
-
-    }
-
-    requestAnimationFrame(drawParticles);
-
-}
-
-resizeCanvas();
-createParticles();
-drawParticles();
-
-window.addEventListener("resize",function(){
-
-    resizeCanvas();
-    createParticles();
-
-});
-
-
-/* ================= COUNTERS ================= */
-
-const counters =
-    document.querySelectorAll(".counter");
-
-const counterObserver =
-    new IntersectionObserver(function(entries){
-
-        entries.forEach(function(entry){
-
-            if(!entry.isIntersecting)
-                return;
-
-            const el = entry.target;
-
-            const target =
-                parseInt(el.dataset.target);
-
-            let start = 0;
-
-            const duration = 1300;
-            const startTime = performance.now();
-
-            function update(time){
-
-                const progress =
-                    Math.min(
-                        (time-startTime)/duration,
-                        1
-                    );
-
-                const eased =
-                    1-Math.pow(1-progress,3);
-
-                el.textContent =
-                    Math.floor(target*eased)
-                    .toLocaleString("en-IN");
-
-                if(progress<1){
-
-                    requestAnimationFrame(update);
-
-                }
-
-            }
-
-            requestAnimationFrame(update);
-
-            counterObserver.unobserve(el);
-
-        });
-
-    },{
-        threshold:.6
-    });
-
-counters.forEach(function(counter){
-
-    counterObserver.observe(counter);
-
-});
-
-
-/* ================= SCROLL REVEAL ================= */
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-const revealObserver =
-    new IntersectionObserver(function(entries){
-
-        entries.forEach(function(entry){
-
-            if(entry.isIntersecting){
-
-                entry.target.classList.add("visible");
-
-                revealObserver.unobserve(
-                    entry.target
-                );
-
-            }
-
-        });
-
-    },{
-        threshold:.12
-    });
-
-revealElements.forEach(function(el){
-
-    revealObserver.observe(el);
-
-});
-
-
-/* ================= SKILL BARS ================= */
-
-const skillBars =
-    document.querySelectorAll(".skill-bar i");
-
-const skillObserver =
-    new IntersectionObserver(function(entries){
-
-        entries.forEach(function(entry){
-
-            if(entry.isIntersecting){
-
-                entry.target.style.width =
-                    entry.target.dataset.width;
-
-                skillObserver.unobserve(
-                    entry.target
-                );
-
-            }
-
-        });
-
-    },{
-        threshold:.5
-    });
-
-skillBars.forEach(function(bar){
-
-    skillObserver.observe(bar);
-
-});
-
-
-/* ================= PROJECT TILT ================= */
-
-document.querySelectorAll(".project")
-.forEach(function(card){
-
-    card.addEventListener("mousemove",function(e){
-
-        if(window.innerWidth < 800)
-            return;
-
-        const rect =
-            card.getBoundingClientRect();
-
-        const x =
-            e.clientX-rect.left;
-
-        const y =
-            e.clientY-rect.top;
-
-        const centerX =
-            rect.width/2;
-
-        const centerY =
-            rect.height/2;
-
-        const rotateX =
-            ((y-centerY)/centerY)*-2;
-
-        const rotateY =
-            ((x-centerX)/centerX)*2;
-
-        card.style.transform =
-            "perspective(900px) " +
-            "rotateX("+rotateX+"deg) " +
-            "rotateY("+rotateY+"deg) " +
-            "translateY(-8px)";
-
-    });
-
-    card.addEventListener("mouseleave",function(){
-
-        card.style.transform = "";
-
-    });
-
-});
-
-
-/* ================= ACTIVE NAV ================= */
-
-const sections =
-    document.querySelectorAll("section[id]");
-
-const navLinks =
-    document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll",function(){
-
-    let current = "";
-
-    sections.forEach(function(section){
-
-        const top =
-            section.offsetTop-200;
-
-        if(window.scrollY >= top){
-
-            current = section.id;
-
-        }
-
-    });
-
-    navLinks.forEach(function(link){
-
-        link.style.color = "";
-
-        if(
-            link.getAttribute("href") ===
-            "#"+current
-        ){
-
-            link.style.color =
-                "var(--cyan)";
-
-        }
-
-    });
-
-});
-
-
-/* ================= SMOOTH BUTTON EFFECT ================= */
-
-document.querySelectorAll("a[href^='#']")
-.forEach(function(link){
-
-    link.addEventListener("click",function(e){
-
-        const target =
-            document.querySelector(
-                link.getAttribute("href")
-            );
-
-        if(target){
-
-            e.preventDefault();
-
-            target.scrollIntoView({
-                behavior:"smooth"
-            });
-
-        }
-
-    });
-
-});
-
-</script>
 
 </body>
 </html>
